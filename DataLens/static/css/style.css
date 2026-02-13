@@ -1,0 +1,303 @@
+/* ================= ROOT COLORS ================= */
+
+:root {
+    --bg-primary: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    --bg-dark: linear-gradient(135deg, #0f172a, #1e293b);
+
+    --card-light: rgba(255, 255, 255, 0.85);
+    --card-dark: rgba(30, 41, 59, 0.9);
+
+    --text-light: #0f172a;
+    --text-dark: #f1f5f9;
+
+    --accent: #2563eb;
+    --accent2: #7c3aed;
+}
+
+/* ================= GLOBAL ================= */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.4s ease;
+    background: var(--bg-primary);
+    color: var(--text-light);
+}
+
+body.dark-mode {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* ================= THEME TOGGLE ================= */
+
+.theme-toggle {
+    width: 50px;
+    height: 25px;
+    background: white;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle-circle {
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 3px;
+    transition: 0.3s;
+}
+
+body.dark-mode .theme-toggle {
+    background: #334155;
+}
+
+body.dark-mode .toggle-circle {
+    left: 26px;
+    background: #facc15;
+}
+
+/* ================= MAIN ================= */
+
+.main-container {
+    padding: 60px 50px;
+}
+
+/* ================= HERO ================= */
+
+.hero-section {
+    padding: 70px;
+    border-radius: 20px;
+    text-align: center;
+    background: url("https://www.transparenttextures.com/patterns/cubes.png"),
+                linear-gradient(135deg, #dbeafe, #f0f9ff);
+    background-blend-mode: overlay;
+}
+
+body.dark-mode .hero-section {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.hero-section h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 18px;
+}
+
+/* ================= CARDS ================= */
+
+.card {
+    background: var(--card-light);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+body.dark-mode .card {
+    background: var(--card-dark);
+}
+
+/* ================= FEATURES GRID ================= */
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.feature-box {
+    width: 280px;
+    padding: 25px;
+    border-radius: 15px;
+    background: var(--card-light);
+    transition: 0.3s;
+    position: relative;
+}
+
+body.dark-mode .feature-box {
+    background: var(--card-dark);
+}
+
+.feature-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* ================= EXPAND BUTTON ================= */
+
+.expand-btn {
+    margin-top: 10px;
+    padding: 6px 10px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.feature-details {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    color: white;
+    margin-top: 60px;
+}
+.hero-section {
+    padding: 120px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #3b82f6, #9333ea, #06b6d4);
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.upload-box {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    margin: auto;
+    border: 2px dashed white;
+}
+
+.upload-inner h3 {
+    font-size: 22px;
+}
+
+.upload-inner p {
+    margin: 10px 0;
+}
+
+.upload-inner span {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.upload-box input[type="file"] {
+    display: none;
+}
+
+.upload-btn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: white;
+    color: #2563eb;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-btn:hover {
+    background: #f1f5f9;
+}
+.why-section {
+    padding: 100px 40px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+body.dark-mode .why-section {
+    background: #0f172a;
+}
+
+.why-section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.why-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.why-card {
+    width: 280px;
+    padding: 30px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+body.dark-mode .why-card {
+    background: #1e293b;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+}
+
+
+.upload-box input[type="file"] {
+    display: none;
+}

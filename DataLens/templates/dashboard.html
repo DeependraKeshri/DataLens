@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style>
+.dashboard-container {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 40px;
+    min-height: 100vh;
+    color: white;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+select, button {
+    padding: 8px;
+    margin: 5px 0;
+}
+
+button {
+    cursor: pointer;
+}
+</style>
+
+<div class="dashboard-container">
+
+    <h1>📊 Interactive Data Dashboard</h1>
+
+    <div class="card">
+        <h3>Dataset Overview</h3>
+        <p>Rows: {{ shape[0] }}</p>
+        <p>Columns: {{ shape[1] }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Visualization Controls</h3>
+
+        <form method="POST">
+
+            <label>X Column</label><br>
+            <select name="x_column">
+                {% for col in columns %}
+                <option value="{{ col }}">{{ col }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label>Y Column</label><br>
+            <select name="y_column">
+                {% for col in columns %}
+                <option value="{{ col }}">{{ col }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label>Chart Type</label><br>
+            <select name="chart_type">
+                <option value="">Select Chart</option>
+                <option value="line">Line</option>
+                <option value="bar">Bar</option>
+                <option value="scatter">Scatter</option>
+                <option value="histogram">Histogram</option>
+                <option value="box">Box</option>
+                <option value="violin">Violin</option>
+                <option value="area">Area</option>
+                <option value="pie">Pie</option>
+            </select><br>
+
+            <label>Analysis Type</label><br>
+            <select name="analysis_type">
+                <option value="">Select Analysis</option>
+                <option value="summary">Summary Statistics</option>
+                <option value="correlation">Correlation Matrix</option>
+                <option value="value_counts">Value Counts</option>
+            </select><br>
+
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+
+    {% if plot_div %}
+    <div class="card">
+        <h3>Visualization Output</h3>
+        {{ plot_div|safe }}
+    </div>
+    {% endif %}
+
+    {% if summary %}
+    <div class="card">
+        <h3>Summary Statistics</h3>
+        <ul>
+            {% for key, value in summary.items() %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Missing %:</strong> {{ missing }}</p>
+    </div>
+    {% endif %}
+
+    {% if correlation %}
+    <div class="card">
+        <h3>Correlation Matrix</h3>
+        {{ correlation|safe }}
+    </div>
+    {% endif %}
+
+    {% if value_counts %}
+    <div class="card">
+        <h3>Value Counts</h3>
+        {{ value_counts|safe }}
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Turn Raw Data Into Powerful Insights</h1>
+        <p>
+            Upload your dataset and instantly generate visualizations
+            and statistical analysis without writing code.
+        </p>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-box">
+
+    <label for="file-upload" class="upload-inner">
+        <h3>📁 Drag & Drop Your File Here</h3>
+        <p>Click to Browse</p>
+        <span>Supported: CSV • Excel • JSON</span>
+    </label>
+
+    <input id="file-upload" type="file" name="file" required>
+
+    <button type="submit" class="upload-btn">Upload & Analyze</button>
+
+</form>
+
+
+    </div>
+</section>
+
+<section class="why-section">
+    <h2>Why Choose DataCanvas?</h2>
+
+    <div class="why-grid">
+        <div class="why-card">
+            <h3>⚡ Instant Insights</h3>
+            <p>No coding required. Just upload and explore.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>📊 Professional Charts</h3>
+            <p>Generate clean and modern visualizations instantly.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>🧠 Smart Analysis</h3>
+            <p>Missing value detection and statistical summaries.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

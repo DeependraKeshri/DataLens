@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section class="features-section">
+    <h1>🚀 Platform Features</h1>
+    <p>Explore what DataCanvas can do for your data.</p>
+
+    <div class="feature-card">
+        <h3>📁 Smart File Upload</h3>
+        <p>Upload CSV, Excel, or JSON files easily.</p>
+        <button onclick="toggleDetails('f1')">See More</button>
+        <div id="f1" class="feature-details" style="display:none;">
+            <p>
+                Secure file handling with format validation and
+                automatic dataset loading for analysis.
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <h3>📊 Interactive Visualizations</h3>
+        <p>Generate professional charts instantly.</p>
+        <button onclick="toggleDetails('f2')">See More</button>
+        <div id="f2" class="feature-details" style="display:none;">
+            <p>
+                Supports Line, Bar, Scatter, Histogram,
+                Box Plot, and Pie charts for flexible analysis.
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <h3>🧠 Statistical Analysis</h3>
+        <p>Understand your data better.</p>
+        <button onclick="toggleDetails('f3')">See More</button>
+        <div id="f3" class="feature-details" style="display:none;">
+            <p>
+                Get mean, median, standard deviation,
+                min, max, and missing value percentage instantly.
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <h3>🌙 Light & Dark Mode</h3>
+        <p>Switch themes anytime.</p>
+        <button onclick="toggleDetails('f4')">See More</button>
+        <div id="f4" class="feature-details" style="display:none;">
+            <p>
+                Persistent theme toggle using localStorage
+                for a smooth user experience.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Feature Toggle Script -->
+<script>
+function toggleDetails(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.style.display =
+            element.style.display === "block" ? "none" : "block";
+    }
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataCanvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">📊 DataCanvas</div>
+
+    <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/features">Features</a>
+
+        <!-- Entire Toggle Clickable -->
+        <div class="theme-toggle" id="themeToggle">
+            <span class="toggle-circle"></span>
+        </div>
+    </nav>
+</header>
+
+<div class="main-container">
+    {% block content %}{% endblock %}
+</div>
+
+<footer class="footer">
+    <p>Modern Data Exploration Platform • Built with Flask & Pandas</p>
+</footer>
+
+</body>
+</html>
