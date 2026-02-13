@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Credential Generator</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">🔐 SmartCred</div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/email">Email</a>
+    <a href="/password">Password</a>
+    <a href="/templates">Templates</a>
+  </nav>
+  <button class="mode-btn" onclick="toggleTheme()">🌙</button>
+</header>
+
+<section class="hero">
+  <h1>Smart Credential Generator</h1>
+  <p>
+    A modern web application to generate secure Email IDs,  
+    strong Passwords and ready-to-use Email Templates.
+  </p>
+</section>
+
+<section class="features">
+  <div class="feature-card email" onclick="location.href='/email'">
+    ✉️
+    <h3>Email Generator</h3>
+    <p>
+      Validate email strength, generate smart email IDs  
+      and get improvement suggestions.
+    </p>
+  </div>
+
+  <div class="feature-card password" onclick="location.href='/password'">
+    🔑
+    <h3>Password Generator</h3>
+    <p>
+      Create easy, medium or hard passwords  
+      and check password security.
+    </p>
+  </div>
+
+  <div class="feature-card template" onclick="location.href='/templates'">
+    📧
+    <h3>Email Templates</h3>
+    <p>
+      Professional, personal and official  
+      email templates ready to use.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Smart Credential Generator</p>
+  <p>Designed for Academic & Learning Purposes</p>
+</footer>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>

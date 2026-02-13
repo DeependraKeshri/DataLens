@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Templates</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">📧 Email Templates</div>
+  <a href="/">⬅ Back</a>
+  <button class="mode-btn" onclick="toggleTheme()">🌙</button>
+</header>
+
+<section class="page-title">
+  <h2>Ready-Made Email Templates</h2>
+  <p>Select a category and edit the content as required.</p>
+</section>
+
+<section class="page-grid">
+
+  <div class="card wide">
+    <h3>📝 Template Selector</h3>
+
+    <select onchange="loadTemplate(this.value)">
+      <option value="">Select Template Type</option>
+      <option value="professional">Professional</option>
+      <option value="friends">Friends</option>
+      <option value="internship">Internship</option>
+      <option value="apology">Apology</option>
+      <option value="thanks">Thank You</option>
+      <option value="leave">Leave Request</option>
+    </select>
+
+    <textarea id="templateArea" rows="10"></textarea>
+    <button onclick="copyTemplate()">📋 Copy Email</button>
+  </div>
+
+</section>
+
+<footer class="footer">
+  <p>Email Templates Module • SmartCred</p>
+</footer>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>

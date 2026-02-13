@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Generator</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">✉️ Email Module</div>
+  <a href="/">⬅ Back</a>
+  <button class="mode-btn" onclick="toggleTheme()">🌙</button>
+</header>
+
+<section class="page-title">
+  <h2>Email ID Generator & Strength Analyzer</h2>
+  <p>Generate professional email IDs or validate your own.</p>
+</section>
+
+<section class="page-grid">
+
+  <div class="card">
+    <h3>🔍 Check Your Email</h3>
+    <p class="helper">
+      Enter your email ID to analyze strength and missing components.
+    </p>
+    <input id="emailInput" placeholder="example@gmail.com">
+    <button onclick="checkEmail()">Check Email Strength</button>
+    <div id="emailResult" class="result"></div>
+  </div>
+
+  <div class="card">
+    <h3>⚙️ Generate Email IDs</h3>
+    <p class="helper">
+      Create email IDs based on your input or computer generation.
+    </p>
+
+    <input id="emailKeyword" placeholder="Enter name or keyword">
+
+    <div class="radio-group">
+      <label><input type="radio" name="emailMode" value="prefix" checked> Add Prefix</label>
+      <label><input type="radio" name="emailMode" value="suffix"> Add Suffix</label>
+      <label><input type="radio" name="emailMode" value="both"> Add Both</label>
+      <label><input type="radio" name="emailMode" value="auto"> Computer Generated</label>
+    </div>
+
+    <button onclick="generateEmail()">Generate Email IDs</button>
+    <ul id="emailList" class="list"></ul>
+  </div>
+
+</section>
+
+<footer class="footer">
+  <p>Email Generator Module • SmartCred</p>
+</footer>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>
